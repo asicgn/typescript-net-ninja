@@ -1,11 +1,14 @@
-const character = 'mario';
+let character = 'mario';
+let age =30;
+let isBlackBelt =false;
 
-console.log(character); 
+character = 'luigi'; 
 
-const inputs = document.querySelectorAll('input');
+// character = 30; // This will cause a TypeScript error because 'character' is of type string, and you are trying to assign a number to it.
 
-console.log(inputs);
+const circ = (diameter: number) => {
+    return diameter * Math.PI;
+}
 
-inputs.forEach(input => {
-    console.log(input);
-});
+console.log(circ(5)); // This will work correctly
+// console.log(circ('hello')); // This will cause a TypeScript error because 'circ' expects a number, but you are passing a string.

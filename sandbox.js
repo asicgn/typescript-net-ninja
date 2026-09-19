@@ -1,11 +1,26 @@
 "use strict";
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
-character = 'luigi';
-// character = 30; // This will cause a TypeScript error because 'character' is of type string, and you are trying to assign a number to it.
-const circ = (diameter) => {
-    return diameter * Math.PI;
-};
-console.log(circ(5)); // This will work correctly
-// console.log(circ('hello')); // This will cause a TypeScript error because 'circ' expects a number, but you are passing a string.
+//explicit types
+let character;
+let age;
+let isLoggedIn;
+// age = 'luigi'; we define age as a number, so we cannot assign a string to it
+age = 40;
+// isLoggedIn =25; same as above, we cannot assign a number to a boolean variable
+isLoggedIn = true;
+//arrays
+let ninjas = []; // we have to make sure that array is empty for push method to work
+ninjas.push('shaun');
+//union types
+let mixed = [];
+mixed.push(20);
+mixed.push('hello');
+mixed.push(true);
+console.log(mixed);
+let uid;
+uid = '123';
+uid = 123;
+//objects
+let ninjaOne;
+ninjaOne = { name: 'yoshi', age: 30 };
+let ninjaTwo;
+ninjaTwo = { name: 'mario', age: 20, beltColour: 'black' }; // it has to have all the properties defined in the object type and not any other properties

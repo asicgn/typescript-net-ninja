@@ -1,29 +1,37 @@
+//explicit types
+let character:string;
+let age: number;
+let isLoggedIn: boolean;
+
+// age = 'luigi'; we define age as a number, so we cannot assign a string to it
+age = 40;
+
+// isLoggedIn =25; same as above, we cannot assign a number to a boolean variable
+isLoggedIn = true;
+
 //arrays
-let names = ['luigi', 'mario','yoshi'];
+let ninjas: string[] = []; // we have to make sure that array is empty for push method to work
+ninjas.push('shaun');
 
-names.push('toad'); // This line adds 'toad' to the end of the names array. 
-// names.push(4); // we cannot push a number to the array because it is of type string[]. 
-// names[0] = 3; // This will cause a type error because we are trying to assign a number to an index of a string array.
+//union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push(20);
+mixed.push('hello');
+mixed.push(true);
+console.log(mixed);
 
-let mixed = ['ken', 4, 'chun-li', 8, 9]; 
-mixed.push('ryu');
-mixed.push(10);
-mixed[0]=3;
+let uid: string | number;
+uid = '123';
+uid = 123;
 
 //objects
-let ninja = {
-    name: 'mario', 
-    belt: 'black',
-    age: 30
+let ninjaOne: object;
+ninjaOne = {name: 'yoshi', age: 30};
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    beltColour: string
 };
 
-ninja.name = 'ryu';
-// ninja.age ='30'; // This will cause a type error because we are trying to assign a string to a property that is expected to be a number.
-// ninja.skills =['fighting', 'sneaking']; //This will cause a type error because we are trying to add a new property to the object that was not defined in the original type.
-
-ninja = {
-    name: 'yoshi',
-    belt: 'green',
-    age: 40
-    // skills: ['fighting', 'sneaking'] We've already defined the type of ninja object, so we cannot add new properties to it.
-}
+ninjaTwo = {name: 'mario', age: 20, beltColour: 'black'}; // it has to have all the properties defined in the object type and not any other properties

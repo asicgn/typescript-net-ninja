@@ -1,9 +1,23 @@
 "use strict";
+// let greet : Function;
 Object.defineProperty(exports, "__esModule", { value: true });
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+// example 1
+let greet; // before writing the function, we can signature the function type and parameters
+greet = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-const greet = (user) => {
-    console.log(`${user.name} says hello`);
+// example 2
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-//alias is can really help us out and reduce code duplication. It can also make our code more readable and easier to understand.
+// example 3
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
+};

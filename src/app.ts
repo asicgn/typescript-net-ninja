@@ -1,13 +1,33 @@
-// const anchor = document.querySelector('a')!;
+// classes
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
 
-// if(anchor) {
-//     console.log(anchor.href);
-// }                              -> reason why we use "if" or "!" is because we are telling typescript that we are sure that anchor will not be null or undefined. So we can use it without checking for null or undefined.
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
 
-// console.log(anchor.href);
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}`;
+    }
+}
+
+const inOne = new Invoice('mario', 'work on the mario website', 250);
+const inTwo = new Invoice('luigi', 'work on the luigi website', 300);
+
+let invoices: Invoice[] = [];
+invoices.push(inOne);
+invoices.push(inTwo);
+
+inOne.client = 'yoshi';
+inTwo.amount = 500;
+
+console.log(invoices);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-// console.log(form.children);
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;

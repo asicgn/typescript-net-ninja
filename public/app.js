@@ -1,9 +1,12 @@
 // classes
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes £${this.amount} for ${this.details}`;
@@ -14,9 +17,10 @@ const inTwo = new Invoice('luigi', 'work on the luigi website', 300);
 let invoices = [];
 invoices.push(inOne);
 invoices.push(inTwo);
-inOne.client = 'yoshi';
-inTwo.amount = 500;
-console.log(invoices);
+invoices.forEach(inv => {
+    // inv.client = 'yoshi'; // This line will cause an error because 'client' is readonly
+    console.log(inv.client, inv.amount, inv.format());
+});
 const form = document.querySelector('.new-item-form');
 // inputs
 const type = document.querySelector('#type');
